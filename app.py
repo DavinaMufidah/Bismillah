@@ -60,10 +60,17 @@ if page == "Edit Data":
                             'tanggal_menginap=:tanggal_menginap, tipe_kamar=:tipe_kamar, nomor_kamar=:nomor_kamar, ' 
                             'handphone=:handphone, needs=:needs '
                             'WHERE id=:id;')
-                            session.execute(query, {'1': nama_baru, '2': gender_baru, '3': tanggal_pemesanan_baru,
-                            '4': tanggal_menginap_baru,
-                            '5': tipe_kamar_baru, '6': nomor_kamar_baru,
-                            '7': handphone_baru, '8': str(needs_baru), '9': id})
+                            session.execute(query, {
+                                'nama': nama_baru,
+                                'gender': gender_baru,
+                                'tanggal_pemesanan': tanggal_pemesanan_baru,
+                                'tanggal_menginap': tanggal_menginap_baru,
+                                'tipe_kamar': tipe_kamar_baru,
+                                'nomor_kamar': nomor_kamar_baru,
+                                'handphone': handphone_baru,
+                                'needs': str(needs_baru),
+                                'id': id
+                                })
                             session.commit()
                             st.experimental_rerun()
 
