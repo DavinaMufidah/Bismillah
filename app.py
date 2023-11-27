@@ -55,7 +55,7 @@ if page == "Edit Data":
                 with col1:
                     if st.form_submit_button('UPDATE'):
                         with conn.session as session:
-                            query = text('UPDATE hotel'
+                            query = text('UPDATE hotel '
                             'SET nama=:nama, gender=:gender, tanggal_pemesanan=:tanggal_pemesanan, '
                             'tanggal_menginap=:tanggal_menginap, tipe_kamar=:tipe_kamar, nomor_kamar=:nomor_kamar, ' 
                             'handphone=:handphone, needs=:needs '
